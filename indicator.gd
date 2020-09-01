@@ -2,7 +2,7 @@ extends Node2D
 
 
 var t = 0
-var dt = 2.2
+var dt = 4.5
 var reversed
 const tx = 16
 const ty = 16 
@@ -18,12 +18,13 @@ func _process(delta):
 	else:
 		set_position(Vector2(-tx * cos(t), ty * sin(t)))
 	t += dt * delta
-	if (t < -1.5 || t > 0):
+	if (t < -1.5 || t > 0.25):
 		dt *= -1
 
 
 func start():
-	t = 0
+	dt = -3.4
+	t = -0.5
 	visible = true
 	
 	

@@ -9,15 +9,18 @@ enum TONGUE_STATE {
 
 var state = TONGUE_STATE.IDLE
 var out_s = 0
-var duration = 0.3
+var duration = 0.2
 var length = 0
 var max_length = 64
 var t
 var reverse
-
+var vx
+const MAX_VX = 4
+const ACCEL = 0.15
+const DECAY = 0.98
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	vx = 0
 
 
 func _process(delta):
@@ -40,15 +43,79 @@ func _process(delta):
 			
 
 
+func handle_movement(dx, dy):
+	if state == TONGUE_STATE.STUCK:
+		points[1].x -= dx
+		points[1].y -= dy
+		length	= sqrt((points[1].x * points[1].x) + (points[1].y * points[1].y))
+		if points[1].y >= 0 or length > max_length:
+			points[1].y = -0.1
+			release()
+
+
 func start(t):
+	vx = get_parent().dx * 0.75
 	if state == TONGUE_STATE.IDLE:
 		state = TONGUE_STATE.FORWARD
 		self.t = t
-		self.length = 4
+	elif state == TONGUE_STATE.STUCK:
+		release()
 
 
 func release():
+	if state == TONGUE_STATE.STUCK:
+		get_parent().vx = vx * 800
+		
 	state = TONGUE_STATE.IDLE
 	out_s = 0
+	points[1].x = -100
+	points[1].y = -100
 
+
+
+func stick():
+	if state == TONGUE_STATE.FORWARD:
+		state = TONGUE_STATE.STUCK
+		get_parent().stick()
+
+
+func stuck():
+	return state == TONGUE_STATE.STUCK
+
+
+func rotate_tongue(delta):
+	var cdx = points[1].x
+	var cdy = points[1].y
+	var cdx2
+	var cdy2
+	var dx = vx
+	var dy
+	
+	if points[1].x > 0:
+		vx += ACCEL * ((max_length - cdx) / max_length)
+	elif points[1].x < 0:
+		vx -= ACCEL * ((max_length + cdx) / max_length)
+	
+	vx *= DECAY
+	
+	if vx > MAX_VX:
+		vx = MAX_VX
+	if vx < -MAX_VX:
+		vx = -MAX_VX
+	
+	var l = sqrt((cdx * cdx) + (cdy * cdy))
+	
+	cdx2 = cdx - dx
+	if (l > abs(cdx2)):
+		cdy2 = sqrt((l * l) - (cdx2 * cdx2))
+		dy = cdy + cdy2
+	else:
+		dy = 0
+		release()
+	
+	return Vector2(4 * dx / delta, 4 * dy / delta)
+
+
+func is_active():
+	return state != TONGUE_STATE.IDLE
 

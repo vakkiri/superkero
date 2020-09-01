@@ -5,68 +5,139 @@ var target
 var holdingOrb
 var doubleJump
 var facingLeft
-var action_held
 var motion = Vector2()
+var stuck
 const UP = Vector2(0, -1)
-const GRAVITY = 1400
-const SPEED = 16000
-const JUMP = -43000
+const GRAVITY = 23
+const SPEED = 280
+const MAX_SPEED = 280
+const SPEED_ACCEL = 50
+const JUMP = -600
+const FRICTION = 25
+const AIR_DRAG = 12
 
-var MAX_Y = 100000
+var MAX_Y = 550
+var vx
+var vy
+var dx
+var dy
 
 func _ready():
 	set_process(true)
 	doubleJump = false
-	action_held = false
+	$indicator.release()
+	stuck = false
+	facingLeft = false
+	vx = 0
+
+
+func handle_gravity(delta):
+	if $tongue.stuck() and not is_on_floor():
+		if not is_on_wall():
+			motion = $tongue.rotate_tongue(delta)
+		else:
+			$tongue.vx = 0
+			motion = Vector2(0, 0)
+			vx = 0
+	else:
+		if Input.is_action_pressed("jump"):
+			motion.y += GRAVITY
+		else:
+			motion.y += GRAVITY * 2
+
+
+func handle_action():
+	if Input.is_action_just_pressed("action") and not $tongue.stuck():
+		$indicator.start()
+	elif Input.is_action_just_released("action"):
+		if Input.is_action_just_released("action"):
+			$tongue.start($indicator.t)
+		$indicator.release()
+		$tongue.reverse = facingLeft
+
+
+func handle_movement():
+	if Input.is_action_just_pressed("ui_right"):
+		facingLeft = false
+	if Input.is_action_just_pressed("ui_left"):
+		facingLeft = true
+			
+	if not $tongue.stuck():
+		var dvx
+		if is_on_floor():
+			dvx = FRICTION
+		else:
+			dvx = AIR_DRAG
+		if vx > 0:
+			vx = max(vx - dvx, 0)
+		elif vx < 0:
+			vx = min(vx + dvx, 0)
+			
+		if Input.is_action_pressed("ui_right"):
+			if not $tongue.stuck():
+				if vx < 0:
+					vx += SPEED_ACCEL * 2
+				else:
+					vx += SPEED_ACCEL
+		elif Input.is_action_pressed("ui_left"):
+			if not $tongue.stuck():
+				if vx > 0:
+					vx -= SPEED_ACCEL * 2
+				else:
+					vx -= SPEED_ACCEL
+					
+		motion.x = vx
+		
+		$AnimatedSprite.flip_v = false
+		$AnimatedSprite.flip_h = facingLeft
+					
+		if motion.x != 0:
+			$AnimatedSprite.animation = "run"
+		else:
+			$AnimatedSprite.animation = "idle"
+
 
 func _physics_process(delta):
+	find_node("indicator").set_reverse(!facingLeft)
 	
-	if Input.is_action_pressed("jump"):
-		motion.y += GRAVITY * delta
-	else:
-		motion.y += GRAVITY * delta * 2
+	if is_on_floor() and $tongue.stuck() and (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
+		$tongue.release()
+		
+	handle_gravity(delta)
 	
 	if (motion.y > MAX_Y):
 		motion.y = MAX_Y
+	if (vx > MAX_SPEED):
+		vx = MAX_SPEED
+	if (vx < -MAX_SPEED):
+		vx = -MAX_SPEED
 	
-	if Input.is_action_pressed("action"):
-		find_node("indicator").set_reverse(!facingLeft)
-		if not action_held:
-			find_node("indicator").start()
-			action_held = true
-	else:
-		if action_held:
-			var indicator = find_node("indicator")
-			find_node("tongue").start(indicator.t)
-		find_node("indicator").release()
-		find_node("tongue").reverse = facingLeft
-		action_held = false
-		
-	if Input.is_action_pressed("ui_right"):
-		facingLeft = false
-		motion.x = SPEED * delta
-	elif Input.is_action_pressed("ui_left"):
-		facingLeft = true
-		motion.x = -SPEED * delta
-	else:
-		motion.x = 0
-		
-	if motion.x != 0:
-		$AnimatedSprite.animation = "run"
-		$AnimatedSprite.flip_v = false
-		$AnimatedSprite.flip_h = motion.x < 0
-	else:
-		$AnimatedSprite.animation = "idle"
+	handle_action()
+	handle_movement()
 	
 	if is_on_floor():
 		doubleJump = true
 		if Input.is_action_just_pressed("jump"):
-			motion.y = JUMP * delta
+			motion.y = JUMP
 			$AnimatedSprite.animation = "jump"
-	elif (doubleJump):
+	elif (doubleJump) or $tongue.stuck():
 		if Input.is_action_just_pressed("jump"):
-			motion.y = JUMP * delta
+			motion.y = JUMP
 			doubleJump = false
-		
+			$tongue.release()
+	
+	var prex = position.x
+	var prey = position.y
 	motion = move_and_slide(motion, UP)
+	dx = position.x - prex
+	dy = position.y - prey
+	
+	if $tongue.is_active():
+		$AnimatedSprite.animation = "open"
 		
+	$tongue.handle_movement(dx, dy)
+		
+
+func stick():
+	stuck = true
+
