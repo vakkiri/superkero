@@ -2,10 +2,11 @@ extends Node2D
 
 
 var t = 0
-var dt = 4.5
+var dt = 4.0
 var reversed
 const tx = 16
-const ty = 16 
+const ty = 16
+const INIT_DT = 4.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,9 +23,12 @@ func _process(delta):
 		dt *= -1
 
 
-func start():
-	dt = -3.4
-	t = -0.5
+func start(player_on_floor):
+	dt = -INIT_DT
+	if not player_on_floor:
+		t = -0.5
+	else:
+		t = 0.2
 	visible = true
 	
 	

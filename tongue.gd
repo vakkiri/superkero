@@ -16,14 +16,14 @@ var t
 var reverse
 var vx
 const MAX_VX = 4
-const ACCEL = 0.15
+const ACCEL = 0.2
 const DECAY = 0.98
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	vx = 0
 
 
-func _process(delta):
+func _physics_process(delta):
 	if state == TONGUE_STATE.IDLE:
 		visible = false
 	elif state == TONGUE_STATE.FORWARD:
@@ -40,7 +40,7 @@ func _process(delta):
 			out_s = 0
 		else:
 			$Area2D.position = points[1]
-			
+
 
 
 func handle_movement(dx, dy):
@@ -54,7 +54,7 @@ func handle_movement(dx, dy):
 
 
 func start(t):
-	vx = get_parent().dx * 0.75
+	vx = get_parent().dx * 1.0
 	if state == TONGUE_STATE.IDLE:
 		state = TONGUE_STATE.FORWARD
 		self.t = t
@@ -68,8 +68,7 @@ func release():
 		
 	state = TONGUE_STATE.IDLE
 	out_s = 0
-	points[1].x = -100
-	points[1].y = -100
+	$Area2D.position = Vector2(0, 0)
 
 
 
@@ -88,7 +87,7 @@ func rotate_tongue(delta):
 	var cdy = points[1].y
 	var cdx2
 	var cdy2
-	var dx = vx
+	var dx
 	var dy
 	
 	if points[1].x > 0:
@@ -103,6 +102,7 @@ func rotate_tongue(delta):
 	if vx < -MAX_VX:
 		vx = -MAX_VX
 	
+	dx = vx
 	var l = sqrt((cdx * cdx) + (cdy * cdy))
 	
 	cdx2 = cdx - dx

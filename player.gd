@@ -1,18 +1,21 @@
 extends KinematicBody2D
 
+var life = 3
+
+const INVINCE_TIME = 0.5
+var invince_timer = 0
 
 var target
 var holdingOrb
-var doubleJump
 var facingLeft
 var motion = Vector2()
 var stuck
 const UP = Vector2(0, -1)
-const GRAVITY = 23
+const GRAVITY = 20
 const SPEED = 280
 const MAX_SPEED = 280
 const SPEED_ACCEL = 50
-const JUMP = -600
+const JUMP = -580
 const FRICTION = 25
 const AIR_DRAG = 12
 
@@ -24,7 +27,6 @@ var dy
 
 func _ready():
 	set_process(true)
-	doubleJump = false
 	$indicator.release()
 	stuck = false
 	facingLeft = false
@@ -48,7 +50,7 @@ func handle_gravity(delta):
 
 func handle_action():
 	if Input.is_action_just_pressed("action") and not $tongue.stuck():
-		$indicator.start()
+		$indicator.start(is_on_floor())
 	elif Input.is_action_just_released("action"):
 		if Input.is_action_just_released("action"):
 			$tongue.start($indicator.t)
@@ -98,6 +100,18 @@ func handle_movement():
 
 
 func _physics_process(delta):
+	if invince_timer > 0:
+		invince_timer -= delta
+		if int(invince_timer * 100) % 4 == 0:
+			visible = false
+		else:
+			visible = true
+	else:
+		visible = true
+		if life <= 0:
+			die()
+		
+		
 	find_node("indicator").set_reverse(!facingLeft)
 	
 	if is_on_floor() and $tongue.stuck() and (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
@@ -116,14 +130,12 @@ func _physics_process(delta):
 	handle_movement()
 	
 	if is_on_floor():
-		doubleJump = true
 		if Input.is_action_just_pressed("jump"):
 			motion.y = JUMP
 			$AnimatedSprite.animation = "jump"
-	elif (doubleJump) or $tongue.stuck():
+	elif $tongue.stuck():
 		if Input.is_action_just_pressed("jump"):
 			motion.y = JUMP
-			doubleJump = false
 			$tongue.release()
 	
 	var prex = position.x
@@ -136,8 +148,19 @@ func _physics_process(delta):
 		$AnimatedSprite.animation = "open"
 		
 	$tongue.handle_movement(dx, dy)
-		
+	
+	if position.y >= 700 / 4:
+		die()
 
 func stick():
 	stuck = true
 
+
+func hit():
+	if invince_timer <= 0:
+		life -= 1
+		invince_timer = INVINCE_TIME
+
+
+func die():
+	get_tree().reload_current_scene()

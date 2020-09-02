@@ -5,7 +5,9 @@ func _ready():
 
 
 func _on_body_entered(body):
-	if (body.name == "TileMap"):
+	if body.name == "TileMap":
 		get_parent().stick()
+	elif body.is_in_group("monsters") and get_parent().is_active():
+		body.hit()
 
 
