@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var life = 3
+var coins = 0
 
 const INVINCE_TIME = 0.5
 var invince_timer = 0
@@ -19,18 +20,23 @@ const JUMP = -580
 const FRICTION = 25
 const AIR_DRAG = 12
 
+var left_pressed_last = false
+
 var MAX_Y = 550
-var vx
-var vy
-var dx
-var dy
+var vx = 0
+var vy = 0
+var dx = 0
+var dy = 0
 
 func _ready():
+	$AnimatedSprite.animation = "idle"
 	set_process(true)
 	$indicator.release()
 	stuck = false
 	facingLeft = false
 	vx = 0
+	life = 3
+	coins = 0
 
 
 func handle_gravity(delta):
@@ -59,10 +65,7 @@ func handle_action():
 
 
 func handle_movement():
-	if Input.is_action_just_pressed("ui_right"):
-		facingLeft = false
-	if Input.is_action_just_pressed("ui_left"):
-		facingLeft = true
+	facingLeft = left_pressed_last and not (Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left")) or (Input.is_action_pressed("ui_left") and not Input.is_action_pressed("ui_right"))
 			
 	if not $tongue.stuck():
 		var dvx
@@ -75,13 +78,13 @@ func handle_movement():
 		elif vx < 0:
 			vx = min(vx + dvx, 0)
 			
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("ui_right") and not (Input.is_action_pressed("ui_left") and left_pressed_last):
 			if not $tongue.stuck():
 				if vx < 0:
 					vx += SPEED_ACCEL * 2
 				else:
 					vx += SPEED_ACCEL
-		elif Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed("ui_left") and not (Input.is_action_pressed("ui_right") and not left_pressed_last):
 			if not $tongue.stuck():
 				if vx > 0:
 					vx -= SPEED_ACCEL * 2
@@ -100,57 +103,65 @@ func handle_movement():
 
 
 func _physics_process(delta):
-	if invince_timer > 0:
-		invince_timer -= delta
-		if int(invince_timer * 100) % 4 == 0:
-			visible = false
+	if Input.is_action_just_pressed("ui_right"):
+		left_pressed_last = false
+	if Input.is_action_just_pressed("ui_left"):
+		left_pressed_last = true
+		
+	if $AnimatedSprite.animation != "teleport":
+		if invince_timer > 0:
+			invince_timer -= delta
+			if int(invince_timer * 100) % 4 == 0:
+				visible = false
+			else:
+				visible = true
 		else:
 			visible = true
-	else:
-		visible = true
-		if life <= 0:
-			die()
+			if life <= 0:
+				die()
+			
+			
+		find_node("indicator").set_reverse(!facingLeft)
 		
-		
-	find_node("indicator").set_reverse(!facingLeft)
-	
-	if is_on_floor() and $tongue.stuck() and (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
-		$tongue.release()
-		
-	handle_gravity(delta)
-	
-	if (motion.y > MAX_Y):
-		motion.y = MAX_Y
-	if (vx > MAX_SPEED):
-		vx = MAX_SPEED
-	if (vx < -MAX_SPEED):
-		vx = -MAX_SPEED
-	
-	handle_action()
-	handle_movement()
-	
-	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
-			motion.y = JUMP
-			$AnimatedSprite.animation = "jump"
-	elif $tongue.stuck():
-		if Input.is_action_just_pressed("jump"):
-			motion.y = JUMP
+		if is_on_floor() and $tongue.stuck() and (Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left")):
 			$tongue.release()
-	
-	var prex = position.x
-	var prey = position.y
-	motion = move_and_slide(motion, UP)
-	dx = position.x - prex
-	dy = position.y - prey
-	
-	if $tongue.is_active():
-		$AnimatedSprite.animation = "open"
+			
+		handle_gravity(delta)
 		
-	$tongue.handle_movement(dx, dy)
-	
-	if position.y >= 700 / 4:
-		die()
+		if (motion.y > MAX_Y):
+			motion.y = MAX_Y
+		if (vx > MAX_SPEED):
+			vx = MAX_SPEED
+		if (vx < -MAX_SPEED):
+			vx = -MAX_SPEED
+		
+		handle_action()
+		handle_movement()
+		
+		if is_on_floor():
+			if Input.is_action_just_pressed("jump"):
+				motion.y = JUMP
+				$AnimatedSprite.animation = "jump"
+				$"/root/JumpSound".play()
+		elif $tongue.stuck():
+			if Input.is_action_just_pressed("jump"):
+				motion.y = JUMP
+				$"/root/JumpSound".play()
+				$tongue.release()
+		
+		var prex = position.x
+		var prey = position.y
+		motion = move_and_slide(motion, UP)
+		dx = position.x - prex
+		dy = position.y - prey
+		
+		if $tongue.is_active():
+			$AnimatedSprite.animation = "open"
+			
+		$tongue.handle_movement(dx, dy)
+		
+		if position.y >= 700 / 4:
+			die()
 
 func stick():
 	stuck = true
@@ -163,4 +174,10 @@ func hit():
 
 
 func die():
-	get_tree().reload_current_scene()
+	get_tree().get_root().find_node("root", true, false).reset()
+
+
+func teleport():
+	$AnimatedSprite.animation = "teleport"
+	
+

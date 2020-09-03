@@ -8,3 +8,4 @@ func _on_body_entered(body):
 	if body.name == "player":
 		queue_free()
 		$"/root/CoinSound".play()
+		body.coins += 1

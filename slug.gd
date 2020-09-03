@@ -49,6 +49,7 @@ func hit():
 	if invince_timer <= 0:
 		life -= 1
 		invince_timer = INVINCE_TIME
+		$"/root/EnemyHit".play()
 
 
 func stunned():

@@ -1,0 +1,133 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://audio/SONG1.wav" type="AudioStream" id=1]
+[ext_resource path="res://sprites/ui/heart-empty.png" type="Texture" id=2]
+[ext_resource path="res://number1.gd" type="Script" id=3]
+[ext_resource path="res://sprites/ui/font.png" type="Texture" id=4]
+[ext_resource path="res://level2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://number2.gd" type="Script" id=6]
+[ext_resource path="res://sprites/ui/heart-full.png" type="Texture" id=7]
+[ext_resource path="res://heart.gd" type="Script" id=8]
+[ext_resource path="res://sprites/coin/coin1.png" type="Texture" id=9]
+[ext_resource path="res://kero_root.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "full",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 5, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 10, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 15, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 20, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 25, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 30, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 35, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 40, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 45, 0, 5, 7 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="root" type="Node2D"]
+scale = Vector2( 4, 4 )
+script = ExtResource( 10 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -2.101
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heart" type="AnimatedSprite" parent="CanvasLayer"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "full"
+offset = Vector2( 8, 8 )
+script = ExtResource( 8 )
+
+[node name="heart2" type="AnimatedSprite" parent="CanvasLayer"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "full"
+offset = Vector2( 8, 8 )
+script = ExtResource( 8 )
+heart_num = 2
+
+[node name="heart3" type="AnimatedSprite" parent="CanvasLayer"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "full"
+offset = Vector2( 8, 8 )
+script = ExtResource( 8 )
+heart_num = 3
+
+[node name="ui_coin" type="AnimatedSprite" parent="CanvasLayer"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+offset = Vector2( 64, 8 )
+
+[node name="number1" type="AnimatedSprite" parent="CanvasLayer"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 13 )
+offset = Vector2( 71, 8 )
+script = ExtResource( 3 )
+
+[node name="number2" type="AnimatedSprite" parent="CanvasLayer"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 13 )
+offset = Vector2( 77, 8 )
+script = ExtResource( 6 )
+
+[node name="level" parent="." instance=ExtResource( 5 )]

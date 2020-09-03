@@ -22,6 +22,9 @@ config/icon="res://sprites/player/kero1.png"
 [autoload]
 
 CoinSound="*res://audio/coin_sound.tscn"
+JumpSound="*res://audio/jump_sound.tscn"
+EnemyHit="*res://audio/enemy_hit.tscn"
+TongueSound="*res://audio/tongue_sound.tscn"
 
 [display]
 

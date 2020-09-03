@@ -56,6 +56,7 @@ func handle_movement(dx, dy):
 func start(t):
 	vx = get_parent().dx * 1.0
 	if state == TONGUE_STATE.IDLE:
+		$"/root/TongueSound".play()
 		state = TONGUE_STATE.FORWARD
 		self.t = t
 	elif state == TONGUE_STATE.STUCK:
