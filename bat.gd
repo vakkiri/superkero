@@ -5,15 +5,15 @@ var motion = Vector2()
 var life
 const INVINCE_TIME = 0.5
 var invince_timer
-var vx = 3
+var vx = 0.5
 
-const DIR_TIMER = 2
+const DIR_TIMER = 1.5
 var dir_timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	invince_timer = randf() * 1
-	dir_timer = (randf() * 2) - 1
+	dir_timer = (randf() * 1.5) - 0.5
 	life = 2
 
 

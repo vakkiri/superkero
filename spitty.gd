@@ -2,14 +2,14 @@ extends KinematicBody2D
 
 var spitball = load("res://spitball.tscn")
 
-var FALL_SPEED = 5
+var FALL_SPEED = 3
 var motion = Vector2()
 var life
 const INVINCE_TIME = 0.5
 var invince_timer
-var vx = 5
+var vx = 2
 
-const DIR_TIMER = 6
+const DIR_TIMER = 2
 const ATTACK_TIMER = 3
 var attack_timer
 var dir_timer
@@ -17,7 +17,7 @@ var dir_timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	invince_timer = 0
-	dir_timer = randf() * 6
+	dir_timer = randf() * 2
 	life = 4
 	attack_timer = ATTACK_TIMER
 	$AnimatedSprite.animation = "walk"

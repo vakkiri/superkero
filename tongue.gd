@@ -65,7 +65,7 @@ func start(t):
 
 func release():
 	if state == TONGUE_STATE.STUCK:
-		get_parent().vx = vx * 800
+		get_parent().vx = vx * 200
 		
 	state = TONGUE_STATE.IDLE
 	out_s = 0
@@ -114,7 +114,7 @@ func rotate_tongue(delta):
 		dy = 0
 		release()
 	
-	return Vector2(4 * dx / delta, 4 * dy / delta)
+	return Vector2(dx / delta, dy / delta)
 
 
 func is_active():

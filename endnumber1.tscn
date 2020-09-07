@@ -1,0 +1,82 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://sprites/ui/end.png" type="Texture" id=1]
+[ext_resource path="res://sprites/ui/font.png" type="Texture" id=2]
+[ext_resource path="res://text-tilemap.tres" type="TileSet" id=3]
+[ext_resource path="res://endnumber1.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 5, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 10, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 15, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 20, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 25, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 30, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 35, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 40, 0, 5, 7 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 45, 0, 5, 7 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 50.0
+} ]
+
+[node name="thanks" type="CanvasLayer"]
+__meta__ = {
+"_edit_vertical_guides_": [ 320.0, 192.0, 448.0 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -24, 40 )
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 655403, 19, 0, 655409, 34, 0, 655488, 53, 0, 720950, 27, 0, 720956, 40, 0, 720961, 37, 0, 720974, 32, 0, 720995, 38, 0, 720998, 27, 0, 721013, 40, 0, 786545, 35, 0, 852038, 45, 0, 852050, 41, 0, 852055, 44, 0, 852062, 42, 0, 852076, 51, 0, 852090, 33, 0, 2556010, 58, 0, 2556015, 55, 0, 2621494, 29, 0, 2621508, 40, 0, 2621519, 54, 0, 2621540, 32, 0, 2687040, 35, 0, 2752571, 41, 0, 2752585, 45, 0, 2752607, 41, 0, 2949199, 54, 0, 7798847, 65, 0, 7798868, 46, 0, 7798873, 34, 0, 7864395, 40, 0, 7864400, 31, 0, 7864414, 31, 0, 7864419, 27, 0, 7864425, 30, 0, 8192069, 54, 0, 8192070, 54, 0, 8192071, 54, 0, 8192072, 54, 0, 8192073, 54, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 310, 208 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 11 )
+script = ExtResource( 4 )

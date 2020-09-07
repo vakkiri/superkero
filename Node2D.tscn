@@ -80,7 +80,6 @@ animations = [ {
 } ]
 
 [node name="root" type="Node2D"]
-scale = Vector2( 4, 4 )
 script = ExtResource( 2 )
 
 [node name="level" parent="." instance=ExtResource( 1 )]
@@ -88,14 +87,12 @@ script = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="heart" type="AnimatedSprite" parent="CanvasLayer"]
-scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "full"
 offset = Vector2( 8, 8 )
 script = ExtResource( 32 )
 
 [node name="heart2" type="AnimatedSprite" parent="CanvasLayer"]
-scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "full"
 offset = Vector2( 8, 8 )
@@ -103,7 +100,6 @@ script = ExtResource( 32 )
 heart_num = 2
 
 [node name="heart3" type="AnimatedSprite" parent="CanvasLayer"]
-scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "full"
 offset = Vector2( 8, 8 )
@@ -111,18 +107,15 @@ script = ExtResource( 32 )
 heart_num = 3
 
 [node name="ui_coin" type="AnimatedSprite" parent="CanvasLayer"]
-scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 offset = Vector2( 64, 8 )
 
 [node name="number1" type="AnimatedSprite" parent="CanvasLayer"]
-scale = Vector2( 4, 4 )
 frames = SubResource( 13 )
 offset = Vector2( 71, 8 )
 script = ExtResource( 34 )
 
 [node name="number2" type="AnimatedSprite" parent="CanvasLayer"]
-scale = Vector2( 4, 4 )
 frames = SubResource( 13 )
 offset = Vector2( 77, 8 )
 script = ExtResource( 35 )

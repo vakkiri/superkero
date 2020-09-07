@@ -33,7 +33,7 @@
 [ext_resource path="res://sprites/coin/coin3.png" type="Texture" id=31]
 [ext_resource path="res://sprites/exit/exit6.png" type="Texture" id=32]
 [ext_resource path="res://sprites/exit/exit1.png" type="Texture" id=33]
-[ext_resource path="res://audio/song2.wav" type="AudioStream" id=34]
+[ext_resource path="res://audio/SONG4.wav" type="AudioStream" id=34]
 [ext_resource path="res://sprites/enemies/bat3.png" type="Texture" id=35]
 [ext_resource path="res://sprites/enemies/bat1.png" type="Texture" id=36]
 [ext_resource path="res://sprites/enemies/bat2.png" type="Texture" id=37]
@@ -98,22 +98,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 48, 16, 0, 16, 0, 0, 48, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=36]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=37]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=38]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
 [sub_resource type="ConvexPolygonShape2D" id=18]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=39]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=40]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
@@ -131,7 +116,22 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=23]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-[sub_resource type="TileSet" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="TileSet" id=29]
 0/name = "tilemap.png 0"
 0/texture = ExtResource( 24 )
 0/tex_offset = Vector2( 0, 0 )
@@ -219,14 +219,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 18 )
+4/shape = SubResource( 21 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 18 ),
+"shape": SubResource( 21 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
@@ -240,14 +240,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 19 )
+5/shape = SubResource( 24 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 19 ),
+"shape": SubResource( 24 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -261,14 +261,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 20 )
+6/shape = SubResource( 25 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 20 ),
+"shape": SubResource( 25 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
@@ -282,14 +282,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 21 )
+7/shape = SubResource( 26 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 21 ),
+"shape": SubResource( 26 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
@@ -303,14 +303,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 22 )
+8/shape = SubResource( 27 )
 8/shape_one_way = false
 8/shape_one_way_margin = 1.0
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 22 ),
+"shape": SubResource( 27 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 8/z_index = 0
@@ -324,14 +324,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape = SubResource( 23 )
+9/shape = SubResource( 28 )
 9/shape_one_way = false
 9/shape_one_way_margin = 1.0
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 23 ),
+"shape": SubResource( 28 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 9/z_index = 0
@@ -807,14 +807,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 37/navigation_offset = Vector2( 0, 0 )
 37/shape_offset = Vector2( 0, 0 )
 37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-37/shape = SubResource( 36 )
+37/shape = SubResource( 18 )
 37/shape_one_way = false
 37/shape_one_way_margin = 1.0
 37/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 36 ),
+"shape": SubResource( 18 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 37/z_index = 0
@@ -828,14 +828,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 38/navigation_offset = Vector2( 0, 0 )
 38/shape_offset = Vector2( 0, 0 )
 38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-38/shape = SubResource( 37 )
+38/shape = SubResource( 19 )
 38/shape_one_way = false
 38/shape_one_way_margin = 1.0
 38/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 37 ),
+"shape": SubResource( 19 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 38/z_index = 0
@@ -849,14 +849,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 39/navigation_offset = Vector2( 0, 0 )
 39/shape_offset = Vector2( 0, 0 )
 39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-39/shape = SubResource( 38 )
+39/shape = SubResource( 20 )
 39/shape_one_way = false
 39/shape_one_way_margin = 1.0
 39/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 38 ),
+"shape": SubResource( 20 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 39/z_index = 0
@@ -870,14 +870,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 40/navigation_offset = Vector2( 0, 0 )
 40/shape_offset = Vector2( 0, 0 )
 40/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-40/shape = SubResource( 39 )
+40/shape = SubResource( 22 )
 40/shape_one_way = false
 40/shape_one_way_margin = 1.0
 40/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 39 ),
+"shape": SubResource( 22 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 40/z_index = 0
@@ -947,14 +947,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 45/navigation_offset = Vector2( 0, 0 )
 45/shape_offset = Vector2( 0, 0 )
 45/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-45/shape = SubResource( 40 )
+45/shape = SubResource( 23 )
 45/shape_one_way = false
 45/shape_one_way_margin = 1.0
 45/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 40 ),
+"shape": SubResource( 23 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 45/z_index = 0
@@ -973,14 +973,14 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 46/shapes = [  ]
 46/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 7.11188, 5.11872 )
 
-[sub_resource type="CapsuleShape2D" id=26]
+[sub_resource type="CapsuleShape2D" id=31]
 radius = 5.0
 height = 5.0
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
@@ -992,6 +992,11 @@ animations = [ {
 "name": "open",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 2 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ) ],
 "loop": false,
 "name": "teleport",
@@ -1001,20 +1006,15 @@ animations = [ {
 "loop": true,
 "name": "jump",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 2, 2 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 8, 5.88066 )
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ ExtResource( 26 ), ExtResource( 20 ), ExtResource( 30 ) ],
 "loop": true,
@@ -1022,7 +1022,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=41]
+[sub_resource type="SpriteFrames" id=36]
 animations = [ {
 "frames": [ ExtResource( 46 ), ExtResource( 46 ) ],
 "loop": false,
@@ -1035,7 +1035,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="SpriteFrames" id=31]
+[sub_resource type="SpriteFrames" id=37]
 animations = [ {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 35 ) ],
 "loop": true,
@@ -1043,7 +1043,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="SpriteFrames" id=32]
+[sub_resource type="SpriteFrames" id=38]
 animations = [ {
 "frames": [ ExtResource( 33 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 32 ) ],
 "loop": true,
@@ -1051,14 +1051,14 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 14.3936, 14.7486 )
 
-[sub_resource type="CapsuleShape2D" id=34]
+[sub_resource type="CapsuleShape2D" id=40]
 radius = 4.0
 height = 4.0
 
-[sub_resource type="SpriteFrames" id=35]
+[sub_resource type="SpriteFrames" id=41]
 animations = [ {
 "frames": [ ExtResource( 25 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 6 ) ],
 "loop": true,
@@ -1069,8 +1069,6 @@ animations = [ {
 [node name="level" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scale = Vector2( 4, 4 )
-transform = Transform2D( 4, 0, 0, 4, 0, 0 )
 scroll_base_scale = Vector2( 0, 0 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -1084,13 +1082,13 @@ __meta__ = {
 }
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 24 )
+tile_set = SubResource( 29 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -2359163, 37, 0, -2359162, 45, 0, -2359161, 45, 0, -2359160, 45, 0, -2359159, 37, 0, -2359158, 45, 0, -2359157, 45, 0, -2359156, 45, 0, -2359155, 37, 0, -2359154, 45, 0, -2359153, 45, 0, -2359152, 45, 0, -2359151, 37, 0, -2293627, 45, 0, -2293615, 45, 0, -2228091, 45, 0, -2228079, 45, 0, -2162555, 45, 0, -2162543, 45, 0, -2097019, 37, 0, -2097015, 37, 0, -2097014, 45, 0, -2097013, 45, 0, -2097012, 45, 0, -2097011, 37, 0, -2097007, 37, 0, -2031479, 45, 0, -2031475, 45, 0, -2031471, 45, 0, -1965943, 45, 0, -1965939, 45, 0, -1965935, 45, 0, -1900407, 45, 0, -1900403, 45, 0, -1900399, 45, 0, -1834875, 37, 0, -1834874, 45, 0, -1834873, 45, 0, -1834872, 45, 0, -1834871, 37, 0, -1834867, 37, 0, -1834866, 45, 0, -1834865, 45, 0, -1834864, 45, 0, -1834863, 37, 0, -1769339, 45, 0, -1769335, 45, 0, -1769327, 45, 0, -1703803, 45, 0, -1703799, 45, 0, -1703791, 45, 0, -1638267, 45, 0, -1638263, 45, 0, -1638255, 45, 0, -1572731, 37, 0, -1572727, 37, 0, -1572726, 45, 0, -1572725, 45, 0, -1572724, 45, 0, -1572723, 37, 0, -1572719, 37, 0, -1507187, 45, 0, -1507183, 45, 0, -1441651, 45, 0, -1441647, 45, 0, -1376115, 45, 0, -1376111, 45, 0, -1310587, 37, 0, -1310586, 45, 0, -1310585, 45, 0, -1310584, 45, 0, -1310583, 37, 0, -1310579, 37, 0, -1310575, 37, 0, -1245051, 45, 0, -1245039, 45, 0, -1179515, 45, 0, -1179503, 45, 0, -1113979, 45, 0, -1113967, 45, 0, -1048443, 37, 0, -1048439, 37, 0, -1048438, 45, 0, -1048437, 45, 0, -1048436, 45, 0, -1048435, 37, 0, -1048434, 45, 0, -1048433, 45, 0, -1048432, 45, 0, -1048431, 37, 0, -982907, 45, 0, -982903, 45, 0, -982899, 45, 0, -982895, 45, 0, -982854, 41, 0, -982847, 43, 0, -917436, 37, 0, -917367, 45, 0, -917363, 45, 0, -917318, 26, 0, -917311, 26, 0, -851900, 45, 0, -851831, 45, 0, -851827, 45, 0, -851782, 28, 0, -851775, 28, 0, -786364, 45, 0, -786295, 45, 0, -786291, 45, 0, -720828, 45, 0, -720763, 37, 0, -720759, 37, 0, -720755, 37, 0, -720751, 37, 0, -655292, 45, 0, -655284, 42, 0, -655280, 43, 0, -655227, 45, 0, -655219, 45, 0, -589756, 45, 0, -589753, 40, 0, -589752, 40, 0, -589748, 37, 0, -589744, 37, 0, -589732, 37, 0, -589731, 37, 0, -589683, 45, 0, -524234, 41, 0, -524212, 45, 0, -524210, 26, 0, -524208, 45, 0, -524207, 37, 0, -524206, 37, 0, -524205, 22, 0, -524147, 45, 0, -524100, 39, 0, -524099, 30, 0, -524098, 30, 0, -524097, 40, 0, -458698, 39, 0, -458697, 40, 0, -458669, 45, 0, -458619, 37, 0, -458615, 37, 0, -458614, 45, 0, -458613, 45, 0, -458612, 45, 0, -458611, 37, 0, -458607, 37, 0, -393166, 42, 0, -393158, 39, 0, -393157, 40, 0, -393152, 39, 0, -393151, 40, 0, -393140, 43, 0, -393136, 41, 0, -393133, 45, 0, -393079, 45, 0, -393071, 45, 0, -327634, 41, 0, -327632, 11, 0, -327631, 11, 0, -327630, 37, 0, -327604, 45, 0, -327600, 45, 0, -327599, 37, 0, -327598, 37, 0, -327597, 22, 0, -327591, 37, 0, -327590, 37, 0, -327585, 37, 0, -327584, 37, 0, -262103, 44, 0, -262100, 11, 0, -262099, 11, 0, -262098, 37, 0, -262068, 45, 0, -262066, 26, 0, -262064, 45, 0, -262061, 45, 0, -262055, 45, 0, -262054, 45, 0, -262049, 45, 0, -262048, 45, 0, -196580, 39, 0, -196579, 40, 0, -196571, 39, 0, -196570, 40, 0, -196568, 11, 0, -196567, 11, 0, -196566, 37, 0, -196556, 43, 0, -196553, 42, 0, -196525, 45, 0, -196475, 37, 0, -196471, 37, 0, -196467, 37, 0, -196463, 37, 0, -196425, 43, 0, -196421, 41, 0, -196417, 42, 0, -196416, 43, 0, -196413, 42, 0, -196412, 41, 0, -131021, 39, 0, -131020, 37, 0, -131019, 40, 0, -131018, 39, 0, -131017, 37, 0, -131016, 40, 0, -130996, 41, 0, -130992, 42, 0, -130989, 45, 0, -130950, 39, 0, -130949, 40, 0, -130939, 45, 0, -130931, 45, 0, -130890, 39, 0, -130889, 37, 0, -130888, 37, 0, -130887, 40, 0, -130886, 39, 0, -130885, 37, 0, -130884, 37, 0, -130883, 39, 0, -130882, 40, 0, -130881, 37, 0, -130880, 37, 0, -130879, 39, 0, -130878, 40, 0, -130877, 37, 0, -130876, 37, 0, -130875, 40, 0, -65511, 37, 0, -65510, 37, 0, -65484, 45, 0, -65481, 45, 0, -65460, 45, 0, -65458, 26, 0, -65456, 45, 0, -65455, 37, 0, -65454, 37, 0, -65453, 22, 0, -65420, 39, 0, -65419, 40, 0, -65410, 31, 0, -65389, 31, 0, -65383, 31, 0, -65359, 39, 0, -65358, 40, 0, -65353, 45, 0, -65352, 45, 0, -65349, 45, 0, -65348, 45, 0, -65345, 45, 0, -65344, 45, 0, -65341, 45, 0, -65340, 45, 0, 25, 45, 0, 26, 45, 0, 31, 42, 0, 32, 43, 0, 34, 44, 0, 52, 46, 0, 55, 46, 0, 76, 45, 0, 80, 45, 0, 89, 37, 0, 90, 37, 0, 95, 37, 0, 96, 37, 0, 127, 32, 0, 129, 42, 0, 130, 41, 0, 135, 42, 0, 136, 32, 0, 137, 41, 0, 138, 42, 0, 143, 43, 0, 148, 32, 0, 157, 32, 0, 158, 41, 0, 163, 32, 0, 172, 39, 0, 173, 40, 0, 183, 46, 0, 184, 46, 0, 187, 46, 0, 188, 46, 0, 191, 46, 0, 192, 46, 0, 195, 46, 0, 196, 46, 0, 65566, 39, 0, 65567, 37, 0, 65568, 27, 0, 65569, 27, 0, 65570, 37, 0, 65571, 40, 0, 65616, 28, 0, 65625, 45, 0, 65626, 45, 0, 65631, 45, 0, 65632, 45, 0, 65654, 32, 0, 65661, 26, 0, 65662, 26, 0, 65663, 27, 0, 65664, 26, 0, 65665, 26, 0, 65666, 26, 0, 65667, 29, 0, 65668, 29, 0, 65669, 27, 0, 65670, 26, 0, 65671, 26, 0, 65672, 26, 0, 65673, 28, 0, 65674, 28, 0, 65675, 26, 0, 65676, 27, 0, 65677, 27, 0, 65678, 27, 0, 65679, 27, 0, 65680, 27, 0, 65681, 27, 0, 65682, 27, 0, 65683, 27, 0, 65684, 27, 0, 65688, 26, 0, 65689, 26, 0, 65693, 26, 0, 65694, 26, 0, 65698, 26, 0, 65699, 26, 0, 65703, 39, 0, 65704, 40, 0, 131098, 44, 0, 131103, 45, 0, 131104, 28, 0, 131105, 28, 0, 131106, 45, 0, 131152, 28, 0, 131186, 31, 0, 131190, 26, 0, 131191, 26, 0, 131197, 29, 0, 131198, 29, 0, 131199, 29, 0, 131200, 28, 0, 131201, 28, 0, 131202, 28, 0, 131203, 28, 0, 131204, 28, 0, 131205, 28, 0, 131206, 28, 0, 131207, 28, 0, 131208, 28, 0, 131209, 28, 0, 131210, 28, 0, 131211, 28, 0, 131212, 28, 0, 131213, 28, 0, 131214, 28, 0, 131215, 28, 0, 131216, 28, 0, 131217, 28, 0, 131218, 28, 0, 131219, 28, 0, 131220, 28, 0, 131224, 28, 0, 131225, 28, 0, 131229, 28, 0, 131230, 28, 0, 131234, 28, 0, 131235, 28, 0, 196627, 43, 0, 196633, 39, 0, 196634, 39, 0, 196639, 46, 0, 196640, 46, 0, 196641, 46, 0, 196642, 46, 0, 196695, 31, 0, 196700, 31, 0, 196714, 31, 0, 196723, 32, 0, 196726, 28, 0, 196727, 28, 0, 262154, 42, 0, 262157, 41, 0, 262158, 42, 0, 262163, 39, 0, 262164, 40, 0, 262232, 32, 0, 262246, 32, 0, 262252, 32, 0, 262258, 26, 0, 262259, 28, 0, 262265, 32, 0, 327689, 39, 0, 327690, 37, 0, 327691, 30, 0, 327692, 30, 0, 327693, 37, 0, 327694, 40, 0, 327753, 28, 0, 327754, 28, 0, 327755, 26, 0, 327756, 26, 0, 327757, 27, 0, 327758, 26, 0, 327759, 26, 0, 327760, 27, 0, 327761, 28, 0, 327762, 28, 0, 327763, 27, 0, 327764, 26, 0, 327765, 27, 0, 327766, 27, 0, 327767, 28, 0, 327768, 28, 0, 327769, 27, 0, 327770, 27, 0, 327771, 27, 0, 327772, 28, 0, 327773, 27, 0, 327774, 27, 0, 327775, 29, 0, 327780, 26, 0, 327781, 26, 0, 327782, 27, 0, 327785, 27, 0, 327786, 27, 0, 327788, 27, 0, 327790, 31, 0, 327794, 29, 0, 327795, 29, 0, 327801, 27, 0, 327802, 26, 0, 393226, 45, 0, 393229, 45, 0, 393289, 28, 0, 393290, 28, 0, 393291, 28, 0, 393292, 28, 0, 393293, 28, 0, 393294, 28, 0, 393295, 28, 0, 393296, 28, 0, 393297, 28, 0, 393298, 28, 0, 393299, 28, 0, 393300, 28, 0, 393301, 28, 0, 393302, 28, 0, 393303, 28, 0, 393304, 28, 0, 393305, 28, 0, 393306, 28, 0, 393307, 28, 0, 393308, 28, 0, 393309, 28, 0, 393310, 28, 0, 393311, 29, 0, 393316, 28, 0, 393317, 28, 0, 393318, 28, 0, 393321, 28, 0, 393322, 28, 0, 393324, 28, 0, 393327, 43, 0, 393337, 29, 0, 393338, 29, 0, 524283, 41, 0, 524284, 42, 0, 524286, 42, 0, 524287, 41, 0, 458753, 39, 0, 458754, 37, 0, 458755, 37, 0, 458756, 45, 0, 458757, 40, 0, 458762, 46, 0, 458765, 46, 0, 458862, 26, 0, 458863, 26, 0, 589819, 39, 0, 589820, 37, 0, 589821, 37, 0, 589822, 37, 0, 589823, 40, 0, 524290, 46, 0, 524291, 46, 0, 524292, 46, 0, 524398, 28, 0, 524399, 28, 0, 655356, 46, 0, 655357, 46, 0, 655358, 46, 0 )
+tile_data = PoolIntArray( -2359163, 37, 0, -2359162, 45, 0, -2359161, 45, 0, -2359160, 45, 0, -2359159, 37, 0, -2359158, 45, 0, -2359157, 45, 0, -2359156, 45, 0, -2359155, 37, 0, -2359154, 45, 0, -2359153, 45, 0, -2359152, 45, 0, -2359151, 37, 0, -2293627, 45, 0, -2293615, 45, 0, -2228091, 45, 0, -2228079, 45, 0, -2162555, 45, 0, -2162543, 45, 0, -2097019, 37, 0, -2097015, 37, 0, -2097014, 45, 0, -2097013, 45, 0, -2097012, 45, 0, -2097011, 37, 0, -2097007, 37, 0, -2031479, 45, 0, -2031475, 45, 0, -2031471, 45, 0, -1965943, 45, 0, -1965939, 45, 0, -1965935, 45, 0, -1900407, 45, 0, -1900403, 45, 0, -1900399, 45, 0, -1834875, 37, 0, -1834874, 45, 0, -1834873, 45, 0, -1834872, 45, 0, -1834871, 37, 0, -1834867, 37, 0, -1834866, 45, 0, -1834865, 45, 0, -1834864, 45, 0, -1834863, 37, 0, -1769339, 45, 0, -1769335, 45, 0, -1769327, 45, 0, -1703803, 45, 0, -1703799, 45, 0, -1703791, 45, 0, -1638267, 45, 0, -1638263, 45, 0, -1638255, 45, 0, -1572731, 37, 0, -1572727, 37, 0, -1572726, 45, 0, -1572725, 45, 0, -1572724, 45, 0, -1572723, 37, 0, -1572719, 37, 0, -1507187, 45, 0, -1507183, 45, 0, -1441651, 45, 0, -1441647, 45, 0, -1376115, 45, 0, -1376111, 45, 0, -1310587, 37, 0, -1310586, 45, 0, -1310585, 45, 0, -1310584, 45, 0, -1310583, 37, 0, -1310579, 37, 0, -1310575, 37, 0, -1245051, 45, 0, -1245039, 45, 0, -1179515, 45, 0, -1179503, 45, 0, -1113979, 45, 0, -1113967, 45, 0, -1048443, 37, 0, -1048439, 37, 0, -1048438, 45, 0, -1048437, 45, 0, -1048436, 45, 0, -1048435, 37, 0, -1048434, 45, 0, -1048433, 45, 0, -1048432, 45, 0, -1048431, 37, 0, -982907, 45, 0, -982903, 45, 0, -982899, 45, 0, -982895, 45, 0, -982854, 41, 0, -982847, 43, 0, -917436, 37, 0, -917367, 45, 0, -917363, 45, 0, -917318, 26, 0, -917311, 26, 0, -851900, 45, 0, -851831, 45, 0, -851827, 45, 0, -851782, 28, 0, -851775, 28, 0, -786364, 45, 0, -786295, 45, 0, -786291, 45, 0, -720828, 45, 0, -720763, 37, 0, -720759, 37, 0, -720755, 37, 0, -720751, 37, 0, -655292, 45, 0, -655284, 42, 0, -655280, 43, 0, -655227, 45, 0, -655219, 45, 0, -589756, 45, 0, -589753, 40, 0, -589752, 40, 0, -589748, 37, 0, -589744, 37, 0, -589732, 37, 0, -589731, 37, 0, -589683, 45, 0, -524234, 41, 0, -524212, 45, 0, -524210, 26, 0, -524208, 45, 0, -524207, 37, 0, -524206, 37, 0, -524205, 22, 0, -524147, 45, 0, -524100, 39, 0, -524099, 30, 0, -524098, 30, 0, -524097, 40, 0, -458698, 39, 0, -458697, 40, 0, -458669, 45, 0, -458619, 37, 0, -458615, 37, 0, -458614, 45, 0, -458613, 45, 0, -458612, 45, 0, -458611, 37, 0, -458607, 37, 0, -393166, 42, 0, -393158, 39, 0, -393157, 40, 0, -393152, 39, 0, -393151, 40, 0, -393140, 43, 0, -393136, 41, 0, -393133, 45, 0, -393079, 45, 0, -393071, 45, 0, -327634, 41, 0, -327632, 11, 0, -327631, 11, 0, -327630, 37, 0, -327604, 45, 0, -327600, 45, 0, -327599, 37, 0, -327598, 37, 0, -327597, 22, 0, -327591, 37, 0, -327590, 37, 0, -327585, 37, 0, -327584, 37, 0, -262103, 44, 0, -262100, 11, 0, -262099, 11, 0, -262098, 37, 0, -262068, 45, 0, -262066, 26, 0, -262064, 45, 0, -262061, 45, 0, -262055, 45, 0, -262054, 45, 0, -262049, 45, 0, -262048, 45, 0, -196580, 39, 0, -196579, 40, 0, -196571, 39, 0, -196570, 40, 0, -196568, 11, 0, -196567, 11, 0, -196566, 37, 0, -196556, 43, 0, -196553, 42, 0, -196525, 45, 0, -196475, 37, 0, -196471, 37, 0, -196467, 37, 0, -196463, 37, 0, -196458, 11, 0, -196425, 43, 0, -196421, 41, 0, -196417, 42, 0, -196416, 43, 0, -196413, 42, 0, -196412, 41, 0, -131021, 39, 0, -131020, 37, 0, -131019, 40, 0, -131018, 39, 0, -131017, 37, 0, -131016, 40, 0, -130996, 41, 0, -130992, 42, 0, -130989, 45, 0, -130950, 39, 0, -130949, 40, 0, -130939, 45, 0, -130931, 45, 0, -130890, 39, 0, -130889, 37, 0, -130888, 37, 0, -130887, 40, 0, -130886, 39, 0, -130885, 37, 0, -130884, 37, 0, -130883, 39, 0, -130882, 40, 0, -130881, 37, 0, -130880, 37, 0, -130879, 39, 0, -130878, 40, 0, -130877, 37, 0, -130876, 37, 0, -130875, 40, 0, -65511, 37, 0, -65510, 37, 0, -65484, 45, 0, -65481, 45, 0, -65460, 45, 0, -65458, 26, 0, -65456, 45, 0, -65455, 37, 0, -65454, 37, 0, -65453, 22, 0, -65420, 39, 0, -65419, 40, 0, -65410, 31, 0, -65389, 31, 0, -65383, 31, 0, -65359, 39, 0, -65358, 40, 0, -65353, 45, 0, -65352, 45, 0, -65349, 45, 0, -65348, 45, 0, -65345, 45, 0, -65344, 45, 0, -65341, 45, 0, -65340, 45, 0, 25, 45, 0, 26, 45, 0, 31, 42, 0, 32, 43, 0, 34, 44, 0, 52, 46, 0, 55, 46, 0, 76, 45, 0, 80, 45, 0, 89, 37, 0, 90, 37, 0, 95, 37, 0, 96, 37, 0, 127, 32, 0, 129, 42, 0, 130, 41, 0, 135, 42, 0, 136, 32, 0, 137, 41, 0, 138, 42, 0, 143, 43, 0, 148, 32, 0, 157, 32, 0, 158, 41, 0, 163, 32, 0, 172, 39, 0, 173, 40, 0, 183, 46, 0, 184, 46, 0, 187, 46, 0, 188, 46, 0, 191, 46, 0, 192, 46, 0, 195, 46, 0, 196, 46, 0, 65566, 39, 0, 65567, 37, 0, 65568, 27, 0, 65569, 27, 0, 65570, 37, 0, 65571, 40, 0, 65616, 28, 0, 65625, 45, 0, 65626, 45, 0, 65631, 45, 0, 65632, 45, 0, 65654, 32, 0, 65661, 26, 0, 65662, 26, 0, 65663, 27, 0, 65664, 26, 0, 65665, 26, 0, 65666, 26, 0, 65667, 29, 0, 65668, 29, 0, 65669, 27, 0, 65670, 26, 0, 65671, 26, 0, 65672, 26, 0, 65673, 28, 0, 65674, 28, 0, 65675, 26, 0, 65676, 27, 0, 65677, 27, 0, 65678, 27, 0, 65679, 27, 0, 65680, 27, 0, 65681, 27, 0, 65682, 27, 0, 65683, 27, 0, 65684, 27, 0, 65688, 26, 0, 65689, 26, 0, 65693, 26, 0, 65694, 26, 0, 65698, 26, 0, 65699, 26, 0, 65703, 39, 0, 65704, 40, 0, 131098, 44, 0, 131103, 45, 0, 131104, 28, 0, 131105, 28, 0, 131106, 45, 0, 131152, 28, 0, 131186, 31, 0, 131190, 26, 0, 131191, 26, 0, 131197, 29, 0, 131198, 29, 0, 131199, 29, 0, 131200, 28, 0, 131201, 28, 0, 131202, 28, 0, 131203, 28, 0, 131204, 28, 0, 131205, 28, 0, 131206, 28, 0, 131207, 28, 0, 131208, 28, 0, 131209, 28, 0, 131210, 28, 0, 131211, 28, 0, 131212, 28, 0, 131213, 28, 0, 131214, 28, 0, 131215, 28, 0, 131216, 28, 0, 131217, 28, 0, 131218, 28, 0, 131219, 28, 0, 131220, 28, 0, 131224, 28, 0, 131225, 28, 0, 131229, 28, 0, 131230, 28, 0, 131234, 28, 0, 131235, 28, 0, 196627, 43, 0, 196633, 39, 0, 196634, 39, 0, 196639, 46, 0, 196640, 46, 0, 196641, 46, 0, 196642, 46, 0, 196695, 31, 0, 196700, 31, 0, 196714, 31, 0, 196723, 32, 0, 196726, 28, 0, 196727, 28, 0, 262154, 42, 0, 262157, 41, 0, 262158, 42, 0, 262163, 39, 0, 262164, 40, 0, 262232, 32, 0, 262246, 32, 0, 262252, 32, 0, 262258, 26, 0, 262259, 28, 0, 262265, 32, 0, 327689, 39, 0, 327690, 37, 0, 327691, 30, 0, 327692, 30, 0, 327693, 37, 0, 327694, 40, 0, 327753, 28, 0, 327754, 28, 0, 327755, 26, 0, 327756, 26, 0, 327757, 27, 0, 327758, 26, 0, 327759, 26, 0, 327760, 27, 0, 327761, 28, 0, 327762, 28, 0, 327763, 27, 0, 327764, 26, 0, 327765, 27, 0, 327766, 27, 0, 327767, 28, 0, 327768, 28, 0, 327769, 27, 0, 327770, 27, 0, 327771, 27, 0, 327772, 28, 0, 327773, 27, 0, 327774, 27, 0, 327775, 29, 0, 327780, 26, 0, 327781, 26, 0, 327782, 27, 0, 327785, 27, 0, 327786, 27, 0, 327788, 27, 0, 327790, 31, 0, 327794, 29, 0, 327795, 29, 0, 327801, 27, 0, 327802, 26, 0, 393226, 45, 0, 393229, 45, 0, 393289, 28, 0, 393290, 28, 0, 393291, 28, 0, 393292, 28, 0, 393293, 28, 0, 393294, 28, 0, 393295, 28, 0, 393296, 28, 0, 393297, 28, 0, 393298, 28, 0, 393299, 28, 0, 393300, 28, 0, 393301, 28, 0, 393302, 28, 0, 393303, 28, 0, 393304, 28, 0, 393305, 28, 0, 393306, 28, 0, 393307, 28, 0, 393308, 28, 0, 393309, 28, 0, 393310, 28, 0, 393311, 29, 0, 393316, 28, 0, 393317, 28, 0, 393318, 28, 0, 393321, 28, 0, 393322, 28, 0, 393324, 28, 0, 393327, 43, 0, 393337, 29, 0, 393338, 29, 0, 524283, 41, 0, 524284, 42, 0, 524286, 42, 0, 524287, 41, 0, 458753, 39, 0, 458754, 37, 0, 458755, 37, 0, 458756, 45, 0, 458757, 40, 0, 458762, 46, 0, 458765, 46, 0, 458862, 26, 0, 458863, 26, 0, 589819, 39, 0, 589820, 37, 0, 589821, 37, 0, 589822, 37, 0, 589823, 40, 0, 524290, 46, 0, 524291, 46, 0, 524292, 46, 0, 524398, 28, 0, 524399, 28, 0, 655356, 46, 0, 655357, 46, 0, 655358, 46, 0 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 1038.8, -110.61 )
+position = Vector2( -44.503, 119.048 )
 script = ExtResource( 14 )
 
 [node name="Area2D" type="Area2D" parent="player"]
@@ -1098,22 +1096,22 @@ script = ExtResource( 15 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="player/Area2D"]
 position = Vector2( 0, 3.70812 )
-shape = SubResource( 25 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-shape = SubResource( 26 )
+shape = SubResource( 31 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
-frames = SubResource( 27 )
+frames = SubResource( 32 )
 animation = "teleport"
 frame = 2
 playing = true
 script = ExtResource( 16 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-offset = Vector2( 0, -120 )
+offset = Vector2( 0, -30 )
 current = true
-limit_bottom = 704
+limit_bottom = 176
 smoothing_enabled = true
 smoothing_speed = 4.0
 
@@ -1143,7 +1141,7 @@ gravity = 0.0
 script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/tongue/Area2D"]
-shape = SubResource( 28 )
+shape = SubResource( 33 )
 
 [node name="slug" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1153,17 +1151,17 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slug"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="slug"]
-frames = SubResource( 30 )
+frames = SubResource( 35 )
 playing = true
 
 [node name="Area2D" type="Area2D" parent="slug"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="slug/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="slug2" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1173,18 +1171,17 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slug2"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="slug2"]
-frames = SubResource( 30 )
-frame = 2
+frames = SubResource( 35 )
 playing = true
 
 [node name="Area2D" type="Area2D" parent="slug2"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="slug2/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="slug3" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1194,10 +1191,10 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slug3"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="slug3"]
-frames = SubResource( 30 )
+frames = SubResource( 35 )
 frame = 2
 playing = true
 
@@ -1205,7 +1202,7 @@ playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="slug3/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="slug4" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1215,18 +1212,102 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="slug4"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="slug4"]
-frames = SubResource( 30 )
-frame = 1
+frames = SubResource( 35 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="slug4"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="slug4/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
+
+[node name="slug5" type="KinematicBody2D" parent="." groups=[
+"monsters",
+]]
+position = Vector2( 2118.88, 4.33732 )
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slug5"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="slug5"]
+frames = SubResource( 35 )
+frame = 1
+playing = true
+
+[node name="Area2D" type="Area2D" parent="slug5"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="slug5/Area2D"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="slug6" type="KinematicBody2D" parent="." groups=[
+"monsters",
+]]
+position = Vector2( 2212.83, 5.52653 )
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slug6"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="slug6"]
+frames = SubResource( 35 )
+frame = 1
+playing = true
+
+[node name="Area2D" type="Area2D" parent="slug6"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="slug6/Area2D"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="slug7" type="KinematicBody2D" parent="." groups=[
+"monsters",
+]]
+position = Vector2( 2286.56, 6.12113 )
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slug7"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="slug7"]
+frames = SubResource( 35 )
+frame = 1
+playing = true
+
+[node name="Area2D" type="Area2D" parent="slug7"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="slug7/Area2D"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="slug8" type="KinematicBody2D" parent="." groups=[
+"monsters",
+]]
+position = Vector2( 2357.32, 6.71574 )
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slug8"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="slug8"]
+frames = SubResource( 35 )
+frame = 1
+playing = true
+
+[node name="Area2D" type="Area2D" parent="slug8"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="slug8/Area2D"]
+position = Vector2( -0.25, 1.875 )
+shape = SubResource( 34 )
 
 [node name="spitty" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1236,10 +1317,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1249,7 +1330,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="spitty2" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1259,10 +1340,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty2"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty2"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1272,7 +1353,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty2/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="spitty3" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1282,10 +1363,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty3"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty3"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1295,7 +1376,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty3/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="spitty4" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1305,10 +1386,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty4"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty4"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1318,7 +1399,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty4/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="spitty5" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1328,10 +1409,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty5"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty5"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1341,7 +1422,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty5/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="spitty6" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1351,10 +1432,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty6"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty6"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1364,7 +1445,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty6/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="spitty7" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1374,10 +1455,10 @@ script = ExtResource( 44 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spitty7"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="spitty7"]
-frames = SubResource( 41 )
+frames = SubResource( 36 )
 animation = "attack"
 frame = 1
 playing = true
@@ -1387,7 +1468,7 @@ script = ExtResource( 45 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spitty7/Area2D"]
 position = Vector2( 1.33739, 2.07343 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="bat" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1397,17 +1478,18 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="bat"]
-frames = SubResource( 31 )
+frames = SubResource( 37 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="bat"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bat/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="bat2" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1417,17 +1499,18 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat2"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="bat2"]
-frames = SubResource( 31 )
+frames = SubResource( 37 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="bat2"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bat2/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="bat3" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1437,17 +1520,18 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat3"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="bat3"]
-frames = SubResource( 31 )
+frames = SubResource( 37 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="bat3"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bat3/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="bat4" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1457,10 +1541,10 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat4"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="bat4"]
-frames = SubResource( 31 )
+frames = SubResource( 37 )
 frame = 2
 playing = true
 
@@ -1468,7 +1552,7 @@ playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bat4/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="bat5" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1478,10 +1562,10 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat5"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="bat5"]
-frames = SubResource( 31 )
+frames = SubResource( 37 )
 frame = 1
 playing = true
 
@@ -1489,7 +1573,7 @@ playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bat5/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="bat6" type="KinematicBody2D" parent="." groups=[
 "monsters",
@@ -1499,31 +1583,29 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bat6"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="bat6"]
-frames = SubResource( 31 )
-frame = 1
+frames = SubResource( 37 )
 playing = true
 
 [node name="Area2D" type="Area2D" parent="bat6"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bat6/Area2D"]
 position = Vector2( -0.25, 1.875 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="exit" type="Area2D" parent="."]
 position = Vector2( 3040.16, -143.94 )
 script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="exit"]
-frames = SubResource( 32 )
-frame = 4
+frames = SubResource( 38 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 position = Vector2( -0.148682, 1.04057 )
-shape = SubResource( 33 )
+shape = SubResource( 39 )
 
 [node name="coin" type="Area2D" parent="." groups=[
 "coins",
@@ -1532,10 +1614,10 @@ position = Vector2( 530.388, -47.2981 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 4
 playing = true
 
@@ -1546,10 +1628,10 @@ position = Vector2( 417.388, -33.2981 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin2"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin2"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 4
 playing = true
 
@@ -1560,10 +1642,10 @@ position = Vector2( 727.808, -38.955 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin3"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin3"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 4
 playing = true
 
@@ -1574,11 +1656,11 @@ position = Vector2( 1096.56, -236.591 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin4"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin4"]
-frames = SubResource( 35 )
-frame = 3
+frames = SubResource( 41 )
+frame = 4
 playing = true
 
 [node name="coin5" type="Area2D" parent="." groups=[
@@ -1588,10 +1670,10 @@ position = Vector2( 1313.65, -95.17 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin5"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin5"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 3
 playing = true
 
@@ -1602,24 +1684,24 @@ position = Vector2( 1312.58, -35.4195 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin6"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin6"]
-frames = SubResource( 35 )
-frame = 2
+frames = SubResource( 41 )
+frame = 3
 playing = true
 
 [node name="coin7" type="Area2D" parent="." groups=[
 "coins",
 ]]
-position = Vector2( 1364.2, -66.1786 )
+position = Vector2( 2407.76, -4.53834 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin7"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin7"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 2
 playing = true
 
@@ -1630,11 +1712,11 @@ position = Vector2( 1488.5, -119.32 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin8"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin8"]
-frames = SubResource( 35 )
-frame = 1
+frames = SubResource( 41 )
+frame = 2
 playing = true
 
 [node name="coin9" type="Area2D" parent="." groups=[
@@ -1644,24 +1726,24 @@ position = Vector2( 2297.53, -463.115 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin9"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin9"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 1
 playing = true
 
 [node name="coin10" type="Area2D" parent="." groups=[
 "coins",
 ]]
-position = Vector2( 3039.86, -8.00476 )
+position = Vector2( 3041.63, -206.348 )
 script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin10"]
-shape = SubResource( 34 )
+shape = SubResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="coin10"]
-frames = SubResource( 35 )
+frames = SubResource( 41 )
 frame = 1
 playing = true
 

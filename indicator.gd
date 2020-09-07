@@ -24,11 +24,12 @@ func _process(delta):
 
 
 func start(player_on_floor):
-	dt = -INIT_DT
 	if not player_on_floor:
 		t = -0.5
+		dt = -INIT_DT
 	else:
 		t = 0.2
+		dt = INIT_DT
 	visible = true
 	
 	

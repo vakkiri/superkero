@@ -12,7 +12,10 @@ func _ready():
 func _process(_delta):
 	var p = get_tree().get_root().find_node("player", true, false)
 
-	if p.life >= heart_num:
-		animation = "full"
-	else:
-		animation = "empty"
+	if p != null:
+		if p.life >= heart_num:
+			animation = "full"
+		else:
+			animation = "empty"
+			
+	visible = p != null

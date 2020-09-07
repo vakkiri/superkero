@@ -12,17 +12,17 @@ var facingLeft
 var motion = Vector2()
 var stuck
 const UP = Vector2(0, -1)
-const GRAVITY = 20
-const SPEED = 280
-const MAX_SPEED = 280
-const SPEED_ACCEL = 50
-const JUMP = -580
-const FRICTION = 25
-const AIR_DRAG = 12
+const GRAVITY = 20 / 4
+const SPEED = 280 / 4
+const MAX_SPEED = 280 / 4
+const SPEED_ACCEL = 50 / 4
+const JUMP = -580 / 4
+const FRICTION = 25 / 4
+const AIR_DRAG = 12 / 4
 
 var left_pressed_last = false
 
-var MAX_Y = 550
+var MAX_Y = 550 / 4
 var vx = 0
 var vy = 0
 var dx = 0
@@ -36,7 +36,6 @@ func _ready():
 	facingLeft = false
 	vx = 0
 	life = 3
-	coins = 0
 
 
 func handle_gravity(delta):
@@ -103,6 +102,20 @@ func handle_movement():
 
 
 func _physics_process(delta):
+	var elder = get_parent().find_node("elder", true, false)
+	
+	if elder != null and len(elder.get_overlapping_bodies()) > 1:
+		if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("action"):
+			if get_parent().find_node("textbox").find_node("TextureRect").visible == false:
+				get_parent().find_node("textbox").find_node("TextureRect").visible = true
+				get_parent().find_node("textbox").find_node("TileMap2").visible = true
+			elif get_parent().find_node("textbox2").find_node("TextureRect").visible == false:
+				get_parent().find_node("textbox2").find_node("TextureRect").visible = true
+				get_parent().find_node("textbox2").find_node("TileMap2").visible = true
+			else:
+				teleport()
+				
+	
 	if Input.is_action_just_pressed("ui_right"):
 		left_pressed_last = false
 	if Input.is_action_just_pressed("ui_left"):
@@ -135,33 +148,38 @@ func _physics_process(delta):
 		if (vx < -MAX_SPEED):
 			vx = -MAX_SPEED
 		
-		handle_action()
-		handle_movement()
-		
-		if is_on_floor():
-			if Input.is_action_just_pressed("jump"):
-				motion.y = JUMP
-				$AnimatedSprite.animation = "jump"
-				$"/root/JumpSound".play()
-		elif $tongue.stuck():
-			if Input.is_action_just_pressed("jump"):
-				motion.y = JUMP
-				$"/root/JumpSound".play()
-				$tongue.release()
-		
-		var prex = position.x
-		var prey = position.y
-		motion = move_and_slide(motion, UP)
-		dx = position.x - prex
-		dy = position.y - prey
-		
-		if $tongue.is_active():
-			$AnimatedSprite.animation = "open"
+		if life > 0:
+			handle_action()
+			handle_movement()
 			
-		$tongue.handle_movement(dx, dy)
+			if is_on_floor():
+				if Input.is_action_just_pressed("jump"):
+					motion.y = JUMP
+					$AnimatedSprite.animation = "jump"
+					$"/root/JumpSound".play()
+			elif $tongue.stuck():
+				if Input.is_action_just_pressed("jump"):
+					motion.y = JUMP
+					$"/root/JumpSound".play()
+					$tongue.release()
 		
-		if position.y >= 700 / 4:
-			die()
+			var prex = position.x
+			var prey = position.y
+			motion = move_and_slide(motion, UP)
+			dx = position.x - prex
+			dy = position.y - prey
+			
+			if $tongue.is_active():
+				$AnimatedSprite.animation = "open"
+				
+			$tongue.handle_movement(dx, dy)
+			
+			if position.y >= 700 / 4:
+				die()
+	elif $AnimatedSprite.animation == "teleport":
+		motion.y += GRAVITY
+		motion.x = 0
+		motion = move_and_slide(motion, UP)
 
 func stick():
 	stuck = true

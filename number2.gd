@@ -6,4 +6,5 @@ func _ready():
 
 func _process(delta):
 	var p = get_tree().get_root().find_node("player", true, false)
-	frame = int(p.coins) % 10
+	if p != null:
+		frame = int(p.coins) % 10
